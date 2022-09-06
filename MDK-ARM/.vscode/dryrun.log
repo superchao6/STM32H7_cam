@@ -1,0 +1,6 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make.exe: Entering directory 'g:/ruisa/Src/V1.0/MDK-ARM'
+make.exe: Leaving directory 'g:/ruisa/Src/V1.0/MDK-ARM'
+ 
+make.exe: *** No targets specified and no makefile found.  Stop.
+

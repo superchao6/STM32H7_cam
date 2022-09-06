@@ -1,0 +1,586 @@
+{
+  "name": "MDK-ARM",
+  "type": "ARM",
+  "mode": "STM32H7B0",
+  "toolchain": "AC5",
+  "dependenceList": [
+    {
+      "groupName": "custom",
+      "depList": [
+        {
+          "name": "default",
+          "sourceDirList": [],
+          "libList": [],
+          "incList": [
+            "./../Core/Inc",
+            "./../Drivers/STM32H7xx_HAL_Driver/Inc",
+            "./../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+            "./../Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+            "./../Drivers/CMSIS/Include",
+            "./../Middlewares/Third_Party/FreeRTOS/Source/include",
+            "./../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+            "./../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F",
+            "./../Drivers/User/Inc",
+            "./.cmsis/dsp_lib",
+            "./.cmsis/include",
+            "./RTE/_STM32H7B0",
+            "./.eide/deps"
+          ],
+          "defineList": [
+            "USE_HAL_DRIVER",
+            "STM32H7B0xx"
+          ]
+        }
+      ]
+    }
+  ],
+  "compileConfig": {
+    "cpuType": "Cortex-M7",
+    "floatingPointHardware": "double",
+    "useCustomScatterFile": false,
+    "scatterFilePath": "undefined",
+    "storageLayout": {
+      "RAM": [
+        {
+          "tag": "RAM",
+          "id": 1,
+          "mem": {
+            "startAddr": "0x0",
+            "size": "0x0"
+          },
+          "isChecked": false,
+          "noInit": false
+        },
+        {
+          "tag": "RAM",
+          "id": 2,
+          "mem": {
+            "startAddr": "0x0",
+            "size": "0x0"
+          },
+          "isChecked": false,
+          "noInit": false
+        },
+        {
+          "tag": "RAM",
+          "id": 3,
+          "mem": {
+            "startAddr": "0x0",
+            "size": "0x0"
+          },
+          "isChecked": false,
+          "noInit": false
+        },
+        {
+          "tag": "IRAM",
+          "id": 1,
+          "mem": {
+            "startAddr": "0x20000000",
+            "size": "0x20000"
+          },
+          "isChecked": true,
+          "noInit": false
+        },
+        {
+          "tag": "IRAM",
+          "id": 2,
+          "mem": {
+            "startAddr": "0x24000000",
+            "size": "0x100000"
+          },
+          "isChecked": false,
+          "noInit": false
+        }
+      ],
+      "ROM": [
+        {
+          "tag": "ROM",
+          "id": 1,
+          "mem": {
+            "startAddr": "0x0",
+            "size": "0x0"
+          },
+          "isChecked": false,
+          "isStartup": false
+        },
+        {
+          "tag": "ROM",
+          "id": 2,
+          "mem": {
+            "startAddr": "0x0",
+            "size": "0x0"
+          },
+          "isChecked": false,
+          "isStartup": false
+        },
+        {
+          "tag": "ROM",
+          "id": 3,
+          "mem": {
+            "startAddr": "0x0",
+            "size": "0x0"
+          },
+          "isChecked": false,
+          "isStartup": false
+        },
+        {
+          "tag": "IROM",
+          "id": 1,
+          "mem": {
+            "startAddr": "0x8000000",
+            "size": "0x20000"
+          },
+          "isChecked": true,
+          "isStartup": true
+        },
+        {
+          "tag": "IROM",
+          "id": 2,
+          "mem": {
+            "startAddr": "0x0",
+            "size": "0x0"
+          },
+          "isChecked": false,
+          "isStartup": false
+        }
+      ]
+    },
+    "options": "null"
+  },
+  "uploader": "JLink",
+  "srcDirs": [
+    "./.eide/deps"
+  ],
+  "virtualFolder": {
+    "name": "<virtual_root>",
+    "files": [],
+    "folders": [
+      {
+        "name": "Application",
+        "files": [],
+        "folders": [
+          {
+            "name": "MDK-ARM",
+            "files": [
+              {
+                "path": "startup_stm32h7b0xx.s"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "User",
+            "files": [],
+            "folders": [
+              {
+                "name": "Core",
+                "files": [
+                  {
+                    "path": "../Core/Src/main.c"
+                  },
+                  {
+                    "path": "../Core/Src/freertos.c"
+                  },
+                  {
+                    "path": "../Core/Src/stm32h7xx_it.c"
+                  },
+                  {
+                    "path": "../Core/Src/stm32h7xx_hal_msp.c"
+                  },
+                  {
+                    "path": "../Core/Src/stm32h7xx_hal_timebase_tim.c"
+                  },
+                  {
+                    "path": "../Core/Src/lcd_test.c"
+                  },
+                  {
+                    "path": "../Core/Src/memory_test.c"
+                  },
+                  {
+                    "path": "../Core/Src/camera_test.c"
+                  }
+                ],
+                "folders": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Drivers",
+        "files": [],
+        "folders": [
+          {
+            "name": "User",
+            "files": [
+              {
+                "path": "../Drivers/User/Src/led.c"
+              },
+              {
+                "path": "../Drivers/User/Src/usart.c"
+              },
+              {
+                "path": "../Drivers/User/Src/rtc.c"
+              },
+              {
+                "path": "../Drivers/User/Src/ospi_w25q64.c"
+              },
+              {
+                "path": "../Drivers/User/Src/sdmmc_sd.c"
+              },
+              {
+                "path": "../Drivers/User/Src/lcd_spi_096.c"
+              },
+              {
+                "path": "../Drivers/User/Src/lcd_image.c"
+              },
+              {
+                "path": "../Drivers/User/Src/lcd_fonts.c"
+              },
+              {
+                "path": "../Drivers/User/Src/lcd_identification.c"
+              },
+              {
+                "path": "../Drivers/User/Src/sccb.c"
+              },
+              {
+                "path": "../Drivers/User/Src/dcmi_ov2640.c"
+              },
+              {
+                "path": "../Drivers/User/Src/dcmi_ov5640.c"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "STM32H7xx_HAL_Driver",
+            "files": [
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dcmi.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_flash_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_hsem.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_mdma.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_exti.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_ospi.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_sdmmc.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_delayblock.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_sd_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc_ex.c"
+              },
+              {
+                "path": "../Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rtc.c"
+              }
+            ],
+            "folders": []
+          },
+          {
+            "name": "CMSIS",
+            "files": [
+              {
+                "path": "../Core/Src/system_stm32h7xx.c"
+              }
+            ],
+            "folders": []
+          }
+        ]
+      },
+      {
+        "name": "Middlewares",
+        "files": [],
+        "folders": [
+          {
+            "name": "FreeRTOS",
+            "files": [
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/croutine.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/list.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/queue.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/timers.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c"
+              },
+              {
+                "path": "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/port.c"
+              }
+            ],
+            "folders": []
+          }
+        ]
+      },
+      {
+        "name": "::CMSIS",
+        "files": [],
+        "folders": []
+      }
+    ]
+  },
+  "excludeList": [],
+  "outDir": "build",
+  "deviceName": null,
+  "packDir": null,
+  "uploadConfig": {
+    "bin": "",
+    "baseAddr": "0x08000000",
+    "cpuInfo": {
+      "vendor": "ST",
+      "cpuName": "STM32F103C8"
+    },
+    "proType": 1,
+    "speed": 8000,
+    "otherCmds": ""
+  },
+  "uploadConfigMap": {},
+  "miscInfo": {
+    "uid": "b8f8a89ee7180ca7386db3e8ec09843c"
+  },
+  "targets": {
+    "STM32H7B0": {
+      "compileConfig": {
+        "cpuType": "Cortex-M7",
+        "floatingPointHardware": "double",
+        "useCustomScatterFile": false,
+        "scatterFilePath": "undefined",
+        "storageLayout": {
+          "RAM": [
+            {
+              "tag": "RAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "RAM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x20000000",
+                "size": "0x20000"
+              },
+              "isChecked": true,
+              "noInit": false
+            },
+            {
+              "tag": "IRAM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x24000000",
+                "size": "0x100000"
+              },
+              "isChecked": false,
+              "noInit": false
+            }
+          ],
+          "ROM": [
+            {
+              "tag": "ROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "ROM",
+              "id": 3,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            },
+            {
+              "tag": "IROM",
+              "id": 1,
+              "mem": {
+                "startAddr": "0x8000000",
+                "size": "0x20000"
+              },
+              "isChecked": true,
+              "isStartup": true
+            },
+            {
+              "tag": "IROM",
+              "id": 2,
+              "mem": {
+                "startAddr": "0x0",
+                "size": "0x0"
+              },
+              "isChecked": false,
+              "isStartup": false
+            }
+          ]
+        },
+        "options": "null"
+      },
+      "uploader": "JLink",
+      "uploadConfig": {
+        "bin": "",
+        "baseAddr": "0x08000000",
+        "cpuInfo": {
+          "vendor": "ST",
+          "cpuName": "STM32F103C8"
+        },
+        "proType": 1,
+        "speed": 8000,
+        "otherCmds": ""
+      },
+      "uploadConfigMap": {},
+      "toolchain": "AC5",
+      "custom_dep": {
+        "name": "default",
+        "sourceDirList": [],
+        "libList": [],
+        "incList": [
+          "../Core/Inc",
+          "../Drivers/STM32H7xx_HAL_Driver/Inc",
+          "../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy",
+          "../Drivers/CMSIS/Device/ST/STM32H7xx/Include",
+          "../Drivers/CMSIS/Include",
+          "../Middlewares/Third_Party/FreeRTOS/Source/include",
+          "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2",
+          "../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F",
+          "../Drivers/User/Inc",
+          ".cmsis/dsp_lib",
+          ".cmsis/include",
+          "RTE/_STM32H7B0"
+        ],
+        "defineList": [
+          "USE_HAL_DRIVER",
+          "STM32H7B0xx"
+        ]
+      },
+      "excludeList": []
+    }
+  },
+  "version": "3.1"
+}
